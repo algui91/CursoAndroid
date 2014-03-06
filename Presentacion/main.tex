@@ -11,45 +11,9 @@
 % notice.
 
 \documentclass{beamer}
-% Replace the \documentclass declaration above
-% with the following two lines to typeset your
-% lecture notes as a handout:
-%\documentclass{article}
-%\usepackage{beamerarticle}
 
-
-% There are many different themes available for Beamer. A comprehensive
-% list with examples is given here:
-% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
-% You can uncomment the themes below if you would like to use a different
-% one:
-%\usetheme{AnnArbor}
-%\usetheme{Antibes}
-%\usetheme{Bergen}
-%\usetheme{Berkeley}
-%\usetheme{Berlin}
-%\usetheme{Boadilla}
-%\usetheme{boxes}
-%\usetheme{CambridgeUS}
-%\usetheme{Copenhagen}
-%\usetheme{Darmstadt}
-%\usetheme{default}
-%\usetheme{Frankfurt}
 \usetheme{Goettingen}
-%\usetheme{Hannover}
-%\usetheme{Ilmenau}
-%\usetheme{JuanLesPins}
-%\usetheme{Luebeck}
-%\usetheme{Madrid}
-%\usetheme{Malmoe}
-%\usetheme{Marburg}
-%\usetheme{Montpellier}
-%\usetheme{PaloAlto}
-%\usetheme{Pittsburgh}
-%\usetheme{Rochester}
-%\usetheme{Singapore}
-%\usetheme{Szeged}
-%\usetheme{Warsaw}
+
 
 \usepackage{fontspec} % Allows font customization
 \usepackage{hyperref}
@@ -214,7 +178,7 @@
 
 \subsection{Crear el proyecto}
 
-\begin{frame}{Blocks}
+\begin{frame}{Crear el proyecto}
 \begin{block}{Pasos a realizar}
 En eclipse, File » New » Android Application Project. Rellenamos la ventana con los siguientes datos:
 
@@ -223,6 +187,18 @@ En eclipse, File » New » Android Application Project. Rellenamos la ventana co
 \includegraphics[scale=.25]{./img/holamundo.png}
 \end{figure}
 Todo siguiente hasta crear el proyecto.
+\end{block}
+\end{frame}
+
+\subsection{Componentes del proyecto}
+
+\begin{frame}{Componentes del proyecto}
+\begin{block}{}
+Los proyectos de Android siguen una estructura fija de carpetas que debemos respetar. Podemos ver esta estructura con la vista Package Explorer que proporciona eclipse. (En Android Studio cambia). Gen » Generados por el compilador. Assets » Recursos externos que podamos necesitar, mp3, xml etc. Res » Recursos de la aplicación (Compilados)
+\begin{figure}[H]
+\centering
+\includegraphics[scale=.3]{./img/estructuraCarpetas.png}
+\end{figure}
 \end{block}
 \end{frame}
 
