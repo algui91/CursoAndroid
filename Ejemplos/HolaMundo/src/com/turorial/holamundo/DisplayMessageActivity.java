@@ -32,12 +32,12 @@ public class DisplayMessageActivity extends Activity {
         TextView textView = new TextView(this);
         textView.setTextSize(40);
         textView.setText(message);
-        
+
         // Establecer el TextView como interfaz de la actividad
         setContentView(textView);
-        
+
         // Show the Up button in the action bar.
-        //setupActionBar();
+        setupActionBar();
 
     }
 

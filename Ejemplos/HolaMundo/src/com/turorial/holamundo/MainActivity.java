@@ -14,8 +14,7 @@ import android.widget.EditText;
  * interfaz de usuario. Al crear una Activity, Android invoca a una serie de
  * métodos, entre ellos <i>oncreate()</i>. El ciclo de vida de una activity se
  * puede ver en <a href=
- * "http://developer.android.com/reference/android/app/Activity.html#ActivityLifecycle"
- * target="_blank">Activity Lifecycle</a>
+ * "http://developer.android.com/reference/android/app/Activity.html#ActivityLifecycle">Activity Lifecycle</a>
  * 
  * @see http://developer.android.com/reference/android/app/Activity.html#
  *      ActivityLifecycle
@@ -24,7 +23,7 @@ import android.widget.EditText;
 public class MainActivity extends Activity implements OnClickListener {
 
     public final static String EXTRA_MESSAGE = "com.tutorial.holamundo.MESSAGE";
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
