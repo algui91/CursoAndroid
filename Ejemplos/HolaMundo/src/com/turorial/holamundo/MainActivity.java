@@ -15,26 +15,34 @@
 
 package com.turorial.holamundo;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
- * Clase principal, hereda de la clase Activity, por lo cual dispondrá de
- * interfaz de usuario. Al crear una Activity, Android invoca a una serie de
- * métodos, entre ellos <i>oncreate()</i>. El ciclo de vida de una activity se
- * puede ver en <a href=
- * "http://developer.android.com/reference/android/app/Activity.html#ActivityLifecycle">Activity Lifecycle</a>
- *
- * @see http://developer.android.com/reference/android/app/Activity.html#
- *      ActivityLifecycle
+ * El Action Bar es uno de los elementos más importantes en el diseño que se
+ * puede implementar en una Activity. Proporciona una serie de características:
+ * 
+ * - Espacio para identificar a la app e indicar al usuario en qué lugar de la
+ *   aplicación se encuentra 
+ * 
+ * - Acceso a acciones importantes (Buscar, copiar, pegar...) 
+ * 
+ * - Navegación entre actividades y vistas.
+ * 
+ * El Action bar permite añádir botones para las acciones más importantes de
+ * la aplicación en el contexto actual. Se llaman action buttons. Si hay demasiados
+ * botones y no tienen cabida en la pantalla, se ocultan.
+ * 
  * @author Alejandro Alcalde
  */
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends ActionBarActivity implements OnClickListener {
 
     public final static String EXTRA_MESSAGE = "com.tutorial.holamundo.MESSAGE";
 
@@ -48,18 +56,7 @@ public class MainActivity extends Activity implements OnClickListener {
          */
         setContentView(R.layout.activity_main);
     }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        /**
-         * Crea los menús definidos en los recursos, sólo se llama una vez, al
-         * pulsar el botón de menú.
-         */
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
+    
     @Override
     public void onClick(View v) {
         /**
@@ -105,7 +102,33 @@ public class MainActivity extends Activity implements OnClickListener {
             default:
                 break;
         }
+    }    
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
 
+        // Inflar los elementos del menú para usarlos en el ActionBar
+        getMenuInflater().inflate(R.menu.main_activity_actions, menu);
+        return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        /**
+         * Cuando el usuario pulsa uno de los action buttons o cualquier otro
+         * botón del menú, se llama a éste método callback. Es parecido al
+         * callback que se vió en el Tema 1 para responder a los eventos onclick
+         * de un botón.
+         */
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                Toast.makeText(this, "Action_search", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.action_settings:
+                Toast.makeText(this, "Action_settings", Toast.LENGTH_SHORT).show();
+            default:
+                break;
+        }
+        return true;
+    }
 }
