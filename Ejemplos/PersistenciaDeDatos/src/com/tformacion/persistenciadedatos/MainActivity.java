@@ -34,6 +34,8 @@ import android.widget.Toast;
  * una interfaz gráfica para las preferencias de nuestra aplicación (Por debajo ésta usa
  * SharedPreferences)
  * 
+ * Para mayores cantidades de datos se usarán bases de datos en SQLite
+ * 
  * @see http://developer.android.com/training/basics/data-storage/shared-preferences.html
  *
  */

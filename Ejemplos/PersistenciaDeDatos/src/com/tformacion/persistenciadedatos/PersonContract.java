@@ -40,8 +40,8 @@ public final class PersonContract {
      * _ID y _COUNT.
      */
     public static abstract class PersonEntry implements BaseColumns{
-        public static final String TABLE_NAME = "entry";
-        public static final String COLUMN_NAME_ENTRY_ID = "entryID";
+        public static final String TABLE_NAME = "person";
+        public static final String COLUMN_NAME_ENTRY_ID = "personID";
         public static final String COLUMN_NAME_FIRST_NAME = "firstname";
         public static final String COLUMN_NAME_SECOND_NAME = "secondname";
     }
