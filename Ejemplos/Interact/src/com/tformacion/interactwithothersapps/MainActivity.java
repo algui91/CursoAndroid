@@ -6,15 +6,17 @@ import org.apache.http.protocol.HTTP;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.provider.CalendarContract.Events;
+import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.Calendar;
@@ -40,11 +42,20 @@ import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
 
+    private static final int TAKE_PHOTO_REQUEST = 100; 
+    
+    public static final int MEDIA_TYPE_IMAGE = 1;
+    public static final int MEDIA_TYPE_VIDEO = 2;
+    
+    private ImageView mPhotoImgage;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mPhotoImgage = (ImageView) findViewById(R.id.photoResultImage);
+        
     }
 
     @Override
@@ -140,6 +151,24 @@ public class MainActivity extends ActionBarActivity {
             startActivity(intent);
         } else{
             Toast.makeText(this, "No hay aplicaciones para esta acción", Toast.LENGTH_SHORT).show();
+        }
+    }
+    
+    public void takePhoto(View target){
+        Intent takePhoto = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(takePhoto, TAKE_PHOTO_REQUEST);
+    }
+    
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK){
+            switch (requestCode) {
+                case TAKE_PHOTO_REQUEST:
+                    mPhotoImgage.setImageBitmap((Bitmap)data.getExtras().get("data"));
+                    break;
+                default:
+                    break;
+            }
         }
     }
     
