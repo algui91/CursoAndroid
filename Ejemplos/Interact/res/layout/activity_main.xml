@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/intentTelButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="Intent Tel:xxx-xxx-xxx" />
+
+    <Button
+        android:id="@+id/intentMapButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="Intent Mapa" />
+
+    <Button
+        android:id="@+id/intentBrowserButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="Intent Web" />
+
+    <Button
+        android:id="@+id/intentEmailButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="Intent Email" />
+    
+    <Button
+        android:id="@+id/intentCalendarButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="Intent Calendario" />
+    
+    <Button
+        android:id="@+id/intentShareButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onButtonClick"
+        android:text="Intent Compartir" />
+
+</LinearLayout>
