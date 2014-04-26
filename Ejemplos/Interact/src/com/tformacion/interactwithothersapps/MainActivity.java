@@ -26,7 +26,7 @@ import java.util.List;
  * 
  * Una de las caracterísitcas más importantes en las aplicaciones Android 
  * es la capacidad de enviar al usuario a otra aplicación basándose en la acción
- * que éste quiere hacer. Por ejemplo, Si la aplicación necestia echar una foto,
+ * que éste quiere hacer. Por ejemplo, Si la aplicación necesita echar una foto,
  * no es necesario crear una actividad dentro de nuestra aplicación que use la cámara.
  * Podremos enviar una petición al sistema para que el usuario elija con qué aplicación
  * tomar la foto.
