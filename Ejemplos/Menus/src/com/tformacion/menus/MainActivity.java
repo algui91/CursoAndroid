@@ -204,6 +204,10 @@ public class MainActivity extends ActionBarActivity {
             listView.setAdapter(mAdapter);
             listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
             
+            // Aquí se implementa implícitamente el ActionMode.Callback, no es necesario
+            // crearlo nosotros mismos, así como tampoco lo es registrar el onLongclickListener,
+            // Al ser una lista fijada con CHOICE_MODE_MULTIPLE_MODAL se registra automáticamente.
+            // Puede verse éste comportamiento en https://github.com/android/platform_frameworks_base/blob/master/core/java/android/widget/AbsListView.java#L1159
             listView.setMultiChoiceModeListener(new MultiChoiceModeListener() {
 
                 private int nr = 0;
