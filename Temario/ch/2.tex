@@ -6,8 +6,7 @@
 Los objetos \textit{{View}}\index{View} se pueden definir de dos maneras:
 \begin{itemize}
     \item {
-    \pause
-        Mediante un fichero XML colocado dentro del directorio \textit{{res/layout}}, que es el que usaremos normalmente.
+        Mediante un fichero XML colocado dentro del directorio \textit{{res/layout}}, que es el que usaremos normalmente.\pause
     }
     \item <2->{
         En tiempo de ejecución, muy útil para crear nuestros propios componentes View.
@@ -127,5 +126,26 @@ Para conseguir esto, \textit{{RelativeLayout}} proporciona propiedades como \tex
         android:layout_below="@id/text1"/>
 </relativelayout>
 \end{xmlcode}
+    \end{block}
+\end{frame}
+
+\subsection{Notificaciones y Diálogos}
+\begin{frame}{Notificaciones y Diálogos}
+    \begin{block}{}En ocasiones hay que mostrar mensajes al usuario para
+    informarle del estado de la aplicación, o del estado de las operaciones 
+    que se estén llevando a cabo. Hay 3 tipos:
+
+	\begin{itemize}
+		\item {
+			Notificaciones Toast.\pause
+		}
+		\item {
+			Notificaciones en la barra de estado.
+		}
+		\item <3->{
+			Diálogos.
+		}
+	\end{itemize}
+Para dibujar la interfaz, el sistema necesita que le pasemos el objeto View raiz, para ir descendiendo por cada uno de sus nodos y presentar al usuario toda la interfaz. El método encargado de esto es \textit{{Activity.setContentView()}}.\index{setContentView()}
     \end{block}
 \end{frame}
