@@ -91,22 +91,22 @@ public class MainActivity extends ActionBarActivity {
      * pulsado el textview, Sin embargo está anticuado, usaremos el Contextual
      * Action Mode
      */
-    // @Override
-    // public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo
-    // menuInfo) {
-    // super.onCreateContextMenu(menu, v, menuInfo);
-    // getMenuInflater().inflate(R.menu.main, menu);
-    // }
-    //
-    // @Override
-    // public boolean onContextItemSelected(MenuItem item) {
-    // switch (item.getItemId()) {
-    // case R.id.item1:
-    // break;
-    // default:
-    // return super.onContextItemSelected(item);
-    // }
-    // }
+//     @Override
+//     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo
+//     menuInfo) {
+//     super.onCreateContextMenu(menu, v, menuInfo);
+//     getMenuInflater().inflate(R.menu.main, menu);
+//     }
+//    
+//     @Override
+//     public boolean onContextItemSelected(MenuItem item) {
+//     switch (item.getItemId()) {
+//     case R.id.item1:
+//     break;
+//     default:
+//     return super.onContextItemSelected(item);
+//     }
+//     }
 
     public static class PlaceholderFragment extends Fragment {
 
@@ -196,7 +196,7 @@ public class MainActivity extends ActionBarActivity {
             final ListView listView = (ListView) rootView.findViewById(R.id.listView1);
 
             for (int i = 0; i < 24; i++) {
-                mItems.add("Name" + i);
+                mItems.add("Elemento " + i);
             }
 
             mAdapter = new SelectionAdapter(getActivity(),

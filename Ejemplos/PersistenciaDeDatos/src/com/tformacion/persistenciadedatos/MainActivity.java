@@ -65,7 +65,7 @@ public class MainActivity extends ActionBarActivity {
         
         // Comprobamos si hay datos guardados.
         String value = mSharedPrefs.getString(EDIT_TEXT_SHARED_PREFERENCES, "");
-        if (!value.isEmpty()){
+        if (value != ""){
            editTextSharedPrefs.setText(value);
         }
         

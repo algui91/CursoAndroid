@@ -84,9 +84,6 @@ public class AndroidVersionsFragment extends ListFragment {
                         mode.finish();
                         break;
                     case R.id.delete_entry:
-                        Toast.makeText(getActivity(), "Deleted " + count + " entries",
-                                Toast.LENGTH_SHORT).show();
-
                         SparseBooleanArray selected = mAdapter.getSelectedIds();
                         // Obtener los ids seleccionados
                         for (int i = (selected.size() - 1); i >= 0; i--) {
@@ -98,12 +95,15 @@ public class AndroidVersionsFragment extends ListFragment {
                                 mAdapter.remove(selectedItem);
                             }
                         }
+                        Toast.makeText(getActivity(), "Deleted " + count + " entries",
+                                Toast.LENGTH_SHORT).show();
                         mode.finish();
                         handled = true;
                         break;
                     case R.id.select_all_entry:
                         mAdapter.selectAll(mListView);
-                        Toast.makeText(getActivity(), count + " entries selected",
+                        int all = mAdapter.getCount();
+                        Toast.makeText(getActivity(), all + " entries selected",
                                 Toast.LENGTH_SHORT).show();
                         handled = true;
                         break;
@@ -160,69 +160,19 @@ public class AndroidVersionsFragment extends ListFragment {
         mVersions =
                 new ArrayList<AndroidVersions>();
 
-        mVersions.add(
-                new AndroidVersions("Froyo", "2.3", R.drawable.froyo_22));
-        mVersions.add(
-                new AndroidVersions("Ginger Bread", "2.3.2", R.drawable.gingerbread23));
-        mVersions.add(
-                new AndroidVersions("HoneyComb", "3.2", R.drawable.honeycomb32));
-        mVersions.add(
-                new AndroidVersions("Ice Cream Sandwich", "4.0", R.drawable.ice_cream_sandwich40));
-        mVersions.add(
-                new AndroidVersions("Jelly Bean", "4.1", R.drawable.jelly_bean41));
-        mVersions.add(
-                new AndroidVersions("Kit Kat", "4.4", R.drawable.kitkat44));
-
-        mVersions.add(
-                new AndroidVersions("Froyo", "2.3", R.drawable.froyo_22));
-        mVersions.add(
-                new AndroidVersions("Ginger Bread", "2.3.2", R.drawable.gingerbread23));
-        mVersions.add(
-                new AndroidVersions("HoneyComb", "3.2", R.drawable.honeycomb32));
-        mVersions.add(
-                new AndroidVersions("Ice Cream Sandwich", "4.0", R.drawable.ice_cream_sandwich40));
-        mVersions.add(
-                new AndroidVersions("Jelly Bean", "4.1", R.drawable.jelly_bean41));
-        mVersions.add(
-                new AndroidVersions("Kit Kat", "4.4", R.drawable.kitkat44));
-
-        mVersions.add(
-                new AndroidVersions("Froyo", "2.3", R.drawable.froyo_22));
-        mVersions.add(
-                new AndroidVersions("Ginger Bread", "2.3.2", R.drawable.gingerbread23));
-        mVersions.add(
-                new AndroidVersions("HoneyComb", "3.2", R.drawable.honeycomb32));
-        mVersions.add(
-                new AndroidVersions("Ice Cream Sandwich", "4.0", R.drawable.ice_cream_sandwich40));
-        mVersions.add(
-                new AndroidVersions("Jelly Bean", "4.1", R.drawable.jelly_bean41));
-        mVersions.add(
-                new AndroidVersions("Kit Kat", "4.4", R.drawable.kitkat44));
-
-        mVersions.add(
-                new AndroidVersions("Froyo", "2.3", R.drawable.froyo_22));
-        mVersions.add(
-                new AndroidVersions("Ginger Bread", "2.3.2", R.drawable.gingerbread23));
-        mVersions.add(
-                new AndroidVersions("HoneyComb", "3.2", R.drawable.honeycomb32));
-        mVersions.add(
-                new AndroidVersions("Ice Cream Sandwich", "4.0", R.drawable.ice_cream_sandwich40));
-        mVersions.add(
-                new AndroidVersions("Jelly Bean", "4.1", R.drawable.jelly_bean41));
-        mVersions.add(
-                new AndroidVersions("Kit Kat", "4.4", R.drawable.kitkat44));
-
-        mVersions.add(
-                new AndroidVersions("Froyo", "2.3", R.drawable.froyo_22));
-        mVersions.add(
-                new AndroidVersions("Ginger Bread", "2.3.2", R.drawable.gingerbread23));
-        mVersions.add(
-                new AndroidVersions("HoneyComb", "3.2", R.drawable.honeycomb32));
-        mVersions.add(
-                new AndroidVersions("Ice Cream Sandwich", "4.0", R.drawable.ice_cream_sandwich40));
-        mVersions.add(
-                new AndroidVersions("Jelly Bean", "4.1", R.drawable.jelly_bean41));
-        mVersions.add(
-                new AndroidVersions("Kit Kat", "4.4", R.drawable.kitkat44));
+        for (int i = 0; i < 10; i++) {
+            mVersions.add(
+                    new AndroidVersions("Froyo" + i, "2.3", R.drawable.froyo_22));
+            mVersions.add(
+                    new AndroidVersions("Ginger Bread" + i, "2.3.2", R.drawable.gingerbread23));
+            mVersions.add(
+                    new AndroidVersions("HoneyComb" + i, "3.2", R.drawable.honeycomb32));
+            mVersions.add(
+                    new AndroidVersions("Ice Cream Sandwich" + i, "4.0", R.drawable.ice_cream_sandwich40));
+            mVersions.add(
+                    new AndroidVersions("Jelly Bean" + i, "4.1", R.drawable.jelly_bean41));
+            mVersions.add(
+                    new AndroidVersions("Kit Kat" + i, "4.4", R.drawable.kitkat44));
+        }
     }
 }
