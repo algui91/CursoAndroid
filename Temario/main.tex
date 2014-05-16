@@ -30,6 +30,7 @@
 
 \usepackage{hyperref}
 \usepackage[english,spanish]{babel}
+\usepackage{multicol} % Split TOC into two colums
 
 \usepackage{minted}
 
@@ -87,8 +88,19 @@ fontsize=\small,
 % the beginning of each subsection:
 \AtBeginSubsection[]
 {
-  \begin{frame}<beamer>{Contenidos}
+  \begin{frame}<beamer>[allowframebreaks]{Contenidos}
+  \begin{multicols}{2}
     \tableofcontents[currentsection,currentsubsection]
+  \end{multicols}
+  \end{frame}
+}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>[allowframebreaks]{Contenidos}
+  \begin{multicols}{2}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{multicols}
   \end{frame}
 }
 
@@ -100,8 +112,10 @@ fontsize=\small,
 \end{frame}
 
 \begin{frame}{Contenidos}
+\begin{multicols}{2}
   \tableofcontents
   % You might wish to add the option [pausesections]
+\end{multicols}
 \end{frame}
 
 \input{ch/1}
