@@ -13,7 +13,7 @@
     	
     	El valor es relativo al espacio ocupado por las vistas hermanas. Por ejemplo, una vista con un peso
     	de 2 y otra de 1. La suma es 3, la primera vista ocupará 2/3 del espacio libre y la segunda el resto. Si 
-    	añádimos otra vista con peso 1, ahora la suma es 4 y la primera estará ocupando 1/2 (2/4) del espacio 
+    	añadimos otra vista con peso 1, ahora la suma es 4 y la primera estará ocupando 1/2 (2/4) del espacio 
     	restante, y las otras dos 1/4. 
     	
     	Si dejamos todos los valores por defecto y especificamos un valor != 0 en una vista, dicha vista ocupará 

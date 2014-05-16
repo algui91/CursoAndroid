@@ -29,11 +29,9 @@ import android.widget.Toast;
  * Clase principal, hereda de la clase Activity, por lo cual dispondrá de
  * interfaz de usuario. Al crear una Activity, Android invoca a una serie de
  * métodos, entre ellos <i>oncreate()</i>. El ciclo de vida de una activity se
- * puede ver en <a href=
- * "http://developer.android.com/reference/android/app/Activity.html#ActivityLifecycle">Activity Lifecycle</a>
+ * puede ver en <a href="http://developer.android.com/reference/android/app/Activity.html#ActivityLifecycle">Activity Lifecycle</a>
  *
- * @see http://developer.android.com/reference/android/app/Activity.html#
- *      ActivityLifecycle
+ * @see http://developer.android.com/reference/android/app/Activity.html#ActivityLifecycle
  * @author Alejandro Alcalde
  */
 public class MainActivity extends Activity implements OnClickListener {
