@@ -13,11 +13,13 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.turorial.holamundo;
+package com.turorial.actionbar;
 
-import android.app.Activity;
+import com.turorial.holamundo.R;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,17 +28,23 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 /**
- * Clase principal, hereda de la clase Activity, por lo cual dispondrá de
- * interfaz de usuario. Al crear una Activity, Android invoca a una serie de
- * métodos, entre ellos <i>oncreate()</i>. El ciclo de vida de una activity se
- * puede ver en <a href=
- * "http://developer.android.com/reference/android/app/Activity.html#ActivityLifecycle">Activity Lifecycle</a>
- *
- * @see http://developer.android.com/reference/android/app/Activity.html#
- *      ActivityLifecycle
+ * El Action Bar es uno de los elementos más importantes en el diseño que se
+ * puede implementar en una Activity. Proporciona una serie de características:
+ * 
+ * - Espacio para identificar a la app e indicar al usuario en qué lugar de la
+ *   aplicación se encuentra 
+ * 
+ * - Acceso a acciones importantes (Buscar, copiar, pegar...) 
+ * 
+ * - Navegación entre actividades y vistas.
+ * 
+ * El Action bar permite añádir botones para las acciones más importantes de
+ * la aplicación en el contexto actual. Se llaman action buttons. Si hay demasiados
+ * botones y no tienen cabida en la pantalla, se ocultan.
+ * 
  * @author Alejandro Alcalde
  */
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends ActionBarActivity implements OnClickListener {
 
     public final static String EXTRA_MESSAGE = "com.tutorial.holamundo.MESSAGE";
 
@@ -109,7 +117,10 @@ public class MainActivity extends Activity implements OnClickListener {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         /**
-         * Controlar las acciones de los elementos del menú
+         * Cuando el usuario pulsa uno de los action buttons o cualquier otro
+         * botón del menú, se llama a éste método callback. Es parecido al
+         * callback que se vió en el Tema 1 para responder a los eventos onclick
+         * de un botón.
          */
         switch (item.getItemId()) {
             case R.id.action_search:
