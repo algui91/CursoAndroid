@@ -16,7 +16,10 @@
         android:layout_width="200dip"
         android:layout_height="wrap_content"
         android:layout_above="@id/button1"
-        android:layout_centerInParent="true" />
+        android:layout_centerInParent="true"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:singleLine="true" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -38,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/checkBox1" />
-    
+
     <Spinner
         android:id="@+id/spinnerR"
         android:layout_width="match_parent"

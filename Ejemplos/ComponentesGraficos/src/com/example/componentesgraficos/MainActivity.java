@@ -7,6 +7,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
@@ -17,6 +18,8 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity implements OnItemSelectedListener {
@@ -60,11 +63,11 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
          * tecla determinada. Se ejecuta cada vez que se pulsa una tecla del
          * teclado
          */
-        editText1.setOnKeyListener(new OnKeyListener() {
-
+        editText1.setOnEditorActionListener(new OnEditorActionListener() {
+            
             @Override
-            public boolean onKey(View arg0, int arg1, KeyEvent arg2) {
-                if (arg1 == KeyEvent.KEYCODE_ENTER) {
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
                     Toast.makeText(
                             editText1.getContext()
                             , "Escribiste: " + editText1.getText()
