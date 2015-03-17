@@ -1,69 +1,4 @@
-\section{Preparando el entorno}
-
-\subsection{Instalar eclipse y el plugin ADT}
-
-\subsubsection{Descargar el SDK de Android y eclipse}
-
-\begin{frame}{Descargar el SDK de Android y eclipse}{}
-  \begin{itemize}
-  \item {
-    Eclipse IDE for Java EE Developers - \href{http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/keplersr2}{\textit{enlace}}
-  }
-  \item {
-    Descargar el SDK - \href{http://developer.android.com/sdk/index.html\#ExistingIDE}{\textit{enlace}}
-  }
-  \item{
-    Una vez descargado e instalado eclipse, instalar el plugin ADT.
-  }
-  \end{itemize}
-\end{frame}
-
-\subsubsection{Instalar el plugin ADT}
-
-\begin{frame}{Instalar el plugin ADT}{}
-  \begin{itemize}
-  \item {
-    En eclipse ir a Help » Install New Software, Click en Add.
-  }
-  \item {
-    En el cuadro de texto, poner un nombre (Ej. ADT Plugin) y en la url \textit{https://dl-ssl.google.com/android/eclipse/}
-  }
-
-    \begin{figure}[h]
-        \centering
-        \includegraphics[scale=.5]{./img/adt.png}
-    \end{figure}
-
-    \item{A continuación, instalar las herramientas de desarrollador}
-
-    \begin{figure}[H]
-    \centering
-    \includegraphics[scale=.4]{./img/dt.png}
-    \end{figure}
-
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Instalar el plugin ADT}{}
-  \begin{itemize}
-  \item {
-    Una vez instalado el plugin y reiniciado eclipse, hay que decir dónde se encuentra el SDK.
-  }
-  \item {
-    Window » Preferences » Android » SDK Location
-  }
-  \item{
-    Instalar una imagen de Android y algunos paquetes extra.
-    Window » Android SDK Manager
-  }
-  \begin{figure}[H]
-    \centering
-    \includegraphics[scale=.25]{./img/sdkmanager.png}
-    \end{figure}
-  \end{itemize}
-\end{frame}
-
-\subsection{Conceptos básicos Android}
+\section{Conceptos básicos Android}
 
 % You can reveal the parts of a slide one at a time
 % with the \pause command:
@@ -104,13 +39,7 @@
 
 \begin{frame}{Crear el proyecto}
 \begin{block}{Pasos a realizar}
-En eclipse, File » New » Android Application Project. Rellenamos la ventana con los siguientes datos:
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=.25]{./img/holamundo.png}
-\end{figure}
-Todo siguiente hasta crear el proyecto.
+En Android Studio, File » New Project.
 \end{block}
 \end{frame}
 
@@ -118,7 +47,7 @@ Todo siguiente hasta crear el proyecto.
 
 \begin{frame}{Componentes del proyecto}
 \begin{block}{}
-Los proyectos de Android siguen una estructura fija de carpetas que debemos respetar. Podemos ver esta estructura con la vista Package Explorer que proporciona eclipse. (En Android Studio cambia). Gen » Generados por el compilador. Assets » Recursos externos que podamos necesitar, mp3, xml etc. Res » Recursos de la aplicación (Compilados)
+Los proyectos de Android siguen una estructura fija de carpetas que debemos respetar.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=.3]{./img/estructuraCarpetas.png}
