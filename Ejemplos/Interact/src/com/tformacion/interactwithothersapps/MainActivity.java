@@ -19,8 +19,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.File;
 import java.util.Calendar;
 import java.util.List;
+
 
 /**
  * 
@@ -46,18 +48,24 @@ public class MainActivity extends ActionBarActivity {
     
     public static final int MEDIA_TYPE_IMAGE = 1;
     public static final int MEDIA_TYPE_VIDEO = 2;
+    private static final String IMAGE_RESOURCE = "image-resource";
     
     private ImageView mPhotoImgage;
+    private Uri mPhotoUri;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        
         mPhotoImgage = (ImageView) findViewById(R.id.photoResultImage);
         
+        if (savedInstanceState != null){
+            Uri s = Uri.parse(savedInstanceState.getString(IMAGE_RESOURCE));
+            mPhotoImgage.setImageURI(s);
+        }
     }
-
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -153,9 +161,11 @@ public class MainActivity extends ActionBarActivity {
             Toast.makeText(this, "No hay aplicaciones para esta acción", Toast.LENGTH_SHORT).show();
         }
     }
-    
-    public void takePhoto(View target){
+
+    public void takePhoto(View target) {
         Intent takePhoto = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        mPhotoUri = Uri.fromFile(new File(getExternalFilesDir(null), "randomfilename"));
+        takePhoto.putExtra(MediaStore.EXTRA_OUTPUT, mPhotoUri);
         startActivityForResult(takePhoto, TAKE_PHOTO_REQUEST);
     }
     
@@ -171,6 +181,13 @@ public class MainActivity extends ActionBarActivity {
             }
         }
     }
+    
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putString(IMAGE_RESOURCE, mPhotoUri.toString());
+        super.onSaveInstanceState(outState);
+    }
+
     
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
