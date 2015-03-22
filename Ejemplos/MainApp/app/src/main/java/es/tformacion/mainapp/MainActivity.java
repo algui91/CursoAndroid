@@ -12,9 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
-import es.tformacion.helloworld.HelloWorldMain;
-
-
 public class MainActivity extends ActionBarActivity implements ActionBar.OnNavigationListener {
 
     /**
@@ -96,7 +93,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
 //                .commit();
         switch (position){
             case 0:
-                startActivity(new Intent(this, HelloWorldMain.class));
+                startActivity(new Intent("es.tformacion.helloworld.HelloWorldMain"));
                 break;
         }
 

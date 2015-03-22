@@ -49,7 +49,7 @@ public class HelloWorldMain extends Activity {
          * Método encargado de “inflar” la actividad. Inicializar cada
          * componente de la actividad con su correspondiente View.
          */
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_hello_world_main);
 
         mButton = (Button) findViewById(R.id.send_button);
 
