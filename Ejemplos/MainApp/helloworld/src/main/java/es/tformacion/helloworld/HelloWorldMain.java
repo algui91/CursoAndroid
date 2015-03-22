@@ -39,6 +39,7 @@ public class HelloWorldMain extends Activity {
     public final static String EXTRA_MESSAGE = "com.tutorial.holamundo.MESSAGE";
 
     private Button mButton;
+
     private OnClickListener mOnClickListener;
 
     @Override

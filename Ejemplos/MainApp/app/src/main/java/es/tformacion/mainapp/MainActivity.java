@@ -91,7 +91,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
 //        getSupportFragmentManager().beginTransaction()
 //                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
 //                .commit();
-        switch (position){
+        switch (position) {
             case 0:
                 startActivity(new Intent("es.tformacion.helloworld.HelloWorldMain"));
                 break;
@@ -111,6 +111,9 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
 
+        public PlaceholderFragment() {
+        }
+
         /**
          * Returns a new instance of this fragment for the given section
          * number.
@@ -121,9 +124,6 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             fragment.setArguments(args);
             return fragment;
-        }
-
-        public PlaceholderFragment() {
         }
 
         @Override
