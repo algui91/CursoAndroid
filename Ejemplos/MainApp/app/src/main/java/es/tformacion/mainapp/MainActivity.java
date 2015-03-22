@@ -1,19 +1,18 @@
 package es.tformacion.mainapp;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
-import android.content.Context;
-import android.os.Build;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
+
+import es.tformacion.helloworld.HelloWorldMain;
 
 
 public class MainActivity extends ActionBarActivity implements ActionBar.OnNavigationListener {
@@ -42,7 +41,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
                         android.R.layout.simple_list_item_1,
                         android.R.id.text1,
                         new String[]{
-                                getString(R.string.title_section1),
+                                "HelloWorld",
                                 getString(R.string.title_section2),
                                 getString(R.string.title_section3),
                         }),
@@ -92,9 +91,15 @@ public class MainActivity extends ActionBarActivity implements ActionBar.OnNavig
     public boolean onNavigationItemSelected(int position, long id) {
         // When the given dropdown item is selected, show its contents in the
         // container view.
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
+//        getSupportFragmentManager().beginTransaction()
+//                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+//                .commit();
+        switch (position){
+            case 0:
+                startActivity(new Intent(this, HelloWorldMain.class));
+                break;
+        }
+
         return true;
     }
 
