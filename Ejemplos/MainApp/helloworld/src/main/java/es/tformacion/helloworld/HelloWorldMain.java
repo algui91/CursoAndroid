@@ -15,12 +15,15 @@
 
 package es.tformacion.helloworld;
 
-import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -34,7 +37,7 @@ import android.widget.EditText;
  * @author Alejandro Alcalde
  * @see http://developer.android.com/reference/android/app/Activity.html#ActivityLifecycle
  */
-public class HelloWorldMain extends Activity {
+public class HelloWorldMain extends Fragment {
 
     public final static String EXTRA_MESSAGE = "com.tutorial.holamundo.MESSAGE";
 
@@ -42,17 +45,21 @@ public class HelloWorldMain extends Activity {
 
     private OnClickListener mOnClickListener;
 
+    public static HelloWorldMain newInstance() {
+        HelloWorldMain fragment = new HelloWorldMain();
+
+        return fragment;
+    }
+
+    public HelloWorldMain() {}
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
 
-        /**
-         * Método encargado de “inflar” la actividad. Inicializar cada
-         * componente de la actividad con su correspondiente View.
-         */
-        setContentView(R.layout.activity_hello_world_main);
+        final View root = inflater.inflate(R.layout.activity_hello_world_main, container, false);
 
-        mButton = (Button) findViewById(R.id.send_button);
+        mButton = (Button) root.findViewById(R.id.send_button);
 
         mOnClickListener = new OnClickListener() {
             @Override
@@ -64,14 +71,14 @@ public class HelloWorldMain extends Activity {
                  * para muchas cosas, entre ellas para lanzar otra activity.
                  */
                 // Los parámetros son el contexto y la activity a lanzar.
-                Intent intent = new Intent(getApplicationContext(), DisplayMessageActivity.class);
+                Intent intent = new Intent(view.getContext(), DisplayMessageActivity.class);
 
                 /**
                  * Obtenemos una referencia del EditText declarado en XML.
                  * findViewById devuelve un objeto View, por tanto es necesario
                  * realizar un casting al tipo de vista que nos interesa.
                  */
-                EditText editText = (EditText) findViewById(R.id.edit_message);
+                EditText editText = (EditText) root.findViewById(R.id.edit_message);
                 // Obtener el valor introducido por el usuario
                 String message = editText.getText().toString();
                 /**
@@ -88,13 +95,7 @@ public class HelloWorldMain extends Activity {
         };
 
         mButton.setOnClickListener(mOnClickListener);
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        // Inflar los elementos del menú para usarlos en el ActionBar
-        getMenuInflater().inflate(R.menu.main_activity_actions, menu);
-        return true;
+        return root;
     }
 }

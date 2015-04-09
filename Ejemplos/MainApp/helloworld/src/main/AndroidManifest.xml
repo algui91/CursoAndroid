@@ -4,6 +4,7 @@
     <application android:allowBackup="true"
                  android:label="@string/app_name">
         <activity
+                android:theme="@android:style/Theme.Holo.Light"
                 android:name="es.tformacion.helloworld.HelloWorldMain"
                 android:label="@string/app_name">
 
@@ -15,6 +16,7 @@
         </activity>
 
         <activity
+                android:theme="@android:style/Theme.Holo.Light"
                 android:name="es.tformacion.helloworld.DisplayMessageActivity"
                 android:label="@string/app_name">
         </activity>
