@@ -1,1 +1,1 @@
-include ':helloworld', ':app'
+include ':helloworld', ':app', ':datapersistency'
