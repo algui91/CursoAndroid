@@ -1,1 +1,1 @@
-include ':helloworld', ':app', ':datapersistency'
+include ':helloworld', ':app', ':datapersistency', ':basicadapter'
