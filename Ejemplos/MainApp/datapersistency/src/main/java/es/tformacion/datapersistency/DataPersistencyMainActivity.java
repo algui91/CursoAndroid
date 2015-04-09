@@ -1,5 +1,6 @@
 package es.tformacion.datapersistency;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -7,7 +8,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -37,7 +37,7 @@ import es.tformacion.datapersistency.PersonContract.PersonEntry;
  *
  * @see http://developer.android.com/training/basics/data-storage/shared-preferences.html
  */
-public class DataPersistencyMainActivity extends ActionBarActivity {
+public class DataPersistencyMainActivity extends Activity {
 
     public static final String EDIT_TEXT_SHARED_PREFERENCES = "ejShared";
 
@@ -94,7 +94,7 @@ public class DataPersistencyMainActivity extends ActionBarActivity {
                     mSharedPrefs
                             .edit()
                             .putString(EDIT_TEXT_SHARED_PREFERENCES, v.getText().toString())
-                            .commit();
+                            .apply();
 
                     Toast.makeText(getApplicationContext(), "Guardando " + v.getText(),
                             Toast.LENGTH_LONG).show();
