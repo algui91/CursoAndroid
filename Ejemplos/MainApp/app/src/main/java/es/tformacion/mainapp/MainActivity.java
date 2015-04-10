@@ -19,11 +19,14 @@ public class MainActivity extends MaterialNavigationDrawer {
                 new Intent("es.tformacion.basicadapter.data.ui.BasicAdapterMainActivity"));
         MaterialSection fragmentBasics = newSection("Fragment Basics", R.mipmap.ic_launcher,
                 new Intent("es.tformacion.fragmentbasics.FragmentBasicsMainActivity"));
+        MaterialSection menus = newSection("Menus", R.mipmap.ic_launcher,
+                new Intent("es.tformacion.menus.MenusMainActivity"));
 
         addSection(helloWorld);
         addSection(dataPers);
         addSection(basicAdap);
         addSection(fragmentBasics);
+        addSection(menus);
 
         setDefaultSectionLoaded(0);
     }

@@ -1,1 +1,1 @@
-include ':helloworld', ':app', ':datapersistency', ':basicadapter', ':fragmentbasics'
+include ':helloworld', ':app', ':datapersistency', ':basicadapter', ':fragmentbasics', ':menus'
