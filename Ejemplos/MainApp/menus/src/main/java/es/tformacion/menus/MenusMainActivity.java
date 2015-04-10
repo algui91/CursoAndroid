@@ -40,7 +40,7 @@ public class MenusMainActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.menus_main, menu);
         return true;
     }
 
@@ -92,7 +92,7 @@ public class MenusMainActivity extends Activity {
 //     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo
 //     menuInfo) {
 //     super.onCreateContextMenu(menu, v, menuInfo);
-//     getMenuInflater().inflate(R.menu.main, menu);
+//     getMenuInflater().inflate(R.menu.menus_main, menu);
 //     }
 //    
 //     @Override
