@@ -1,0 +1,84 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/blaaaaaaaaaaa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Intent Implícitos y sin resultado"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="4" >
+
+        <Button
+            android:id="@+id/intentTelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonClick"
+            android:text="Intent Tel" />
+
+        <Button
+            android:id="@+id/intentMapButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonClick"
+            android:text="Intent Mapa" />
+
+        <Button
+            android:id="@+id/intentBrowserButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonClick"
+            android:text="Intent Web" />
+
+        <Button
+            android:id="@+id/intentEmailButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonClick"
+            android:text="Intent Email" />
+
+        <Button
+            android:id="@+id/intentCalendarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonClick"
+            android:text="Intent Calendario" />
+
+        <Button
+            android:id="@+id/intentShareButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonClick"
+            android:text="Intent Compartir" />
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/bleeeeeeeeee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Recibir resultado"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    
+    <Button
+            android:id="@+id/intentTakePhotoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="takePhoto"
+            android:text="Echar Foto" />
+
+    <ImageView
+        android:id="@+id/photoResultImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/abc_btn_check_material" />
+
+</LinearLayout>
