@@ -1,7 +1,5 @@
 package es.tformacion.interact;
 
-import org.apache.http.protocol.HTTP;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -16,6 +14,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import org.apache.http.protocol.HTTP;
+
 import java.io.File;
 import java.util.Calendar;
 import java.util.List;
@@ -27,7 +27,7 @@ import java.util.List;
  * no es necesario crear una actividad dentro de nuestra aplicación que use la cámara.
  * Podremos enviar una petición al sistema para que el usuario elija con qué aplicación
  * tomar la foto.
- *
+ * <p/>
  * La diferencia entre intents implícitos y explícitos es que en el último se indica
  * el nombre de la clase del componente a iniciar. En los intents implícitos por contra,
  * se indica el tipo de acción que se quiere realizar, como echar una foto o mostrar
@@ -81,7 +81,8 @@ public class InteractMainActivity extends Activity {
             uri = Uri.parse("http://elbauldelprogramador.com");
             intent = new Intent(Intent.ACTION_VIEW, uri);
 
-        } else if (i == R.id.intentEmailButton) {/*
+        } else if (i == R.id.intentEmailButton) {
+                /*
                  * En caso de requerir de datos extra se le proporcionan con
                  * putExtra. Es aconsejable establecer el MIME Type basado en la
                  * Uri para especificar el tipo de actividades que podrán
@@ -90,6 +91,7 @@ public class InteractMainActivity extends Activity {
                  * ACTION_VIEW, el MIME Type debería ser image/*.
                  */
             intent = new Intent(Intent.ACTION_SEND);
+
             intent.setType(HTTP.PLAIN_TEXT_TYPE); // Declaramos el tipo, ya
             // que este intent no
             // tiene uri
@@ -125,8 +127,6 @@ public class InteractMainActivity extends Activity {
                 Toast.makeText(this, "No hay aplicaciones para esta acción", Toast.LENGTH_SHORT)
                         .show();
             }
-
-        } else {
         }
         
         /*

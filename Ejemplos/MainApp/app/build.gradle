@@ -30,4 +30,5 @@ dependencies {
     compile project(':fragmentbasics')
     compile project(':menus')
     compile project(':interact')
+    compile project(':receivingdata')
 }

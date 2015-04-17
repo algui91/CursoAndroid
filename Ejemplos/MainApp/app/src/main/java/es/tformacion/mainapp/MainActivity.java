@@ -23,6 +23,8 @@ public class MainActivity extends MaterialNavigationDrawer {
                 new Intent("es.tformacion.menus.MenusMainActivity"));
         MaterialSection interact = newSection("Intents", R.mipmap.ic_launcher,
                 new Intent("es.tformacion.interact.InteractMainActivity"));
+        MaterialSection receive = newSection("Receiving Data", R.mipmap.ic_launcher,
+                new Intent("es.tformacion.receivingdata.ReceivingDataMainActivity"));
 
         addSection(helloWorld);
         addSection(dataPers);
@@ -30,6 +32,7 @@ public class MainActivity extends MaterialNavigationDrawer {
         addSection(fragmentBasics);
         addSection(menus);
         addSection(interact);
+        addSection(receive);
 
         setDefaultSectionLoaded(0);
     }
