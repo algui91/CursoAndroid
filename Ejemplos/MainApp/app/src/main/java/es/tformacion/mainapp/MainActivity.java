@@ -3,6 +3,7 @@ package es.tformacion.mainapp;
 import android.content.Intent;
 import android.os.Bundle;
 
+import es.tformacion.fab.FabFragment;
 import es.tformacion.helloworld.HelloWorldMain;
 import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.neokree.materialnavigationdrawer.elements.MaterialSection;
@@ -25,6 +26,8 @@ public class MainActivity extends MaterialNavigationDrawer {
                 new Intent("es.tformacion.interact.InteractMainActivity"));
         MaterialSection receive = newSection("Receiving Data", R.mipmap.ic_launcher,
                 new Intent("es.tformacion.receivingdata.ReceivingDataMainActivity"));
+        MaterialSection fab = newSection("FAB", R.mipmap.ic_launcher,
+                new FabFragment());
 
         addSection(helloWorld);
         addSection(dataPers);
@@ -33,6 +36,7 @@ public class MainActivity extends MaterialNavigationDrawer {
         addSection(menus);
         addSection(interact);
         addSection(receive);
+        addSection(fab);
 
         setDefaultSectionLoaded(0);
     }

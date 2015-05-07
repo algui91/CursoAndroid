@@ -31,4 +31,5 @@ dependencies {
     compile project(':menus')
     compile project(':interact')
     compile project(':receivingdata')
+    compile project(':fab')
 }

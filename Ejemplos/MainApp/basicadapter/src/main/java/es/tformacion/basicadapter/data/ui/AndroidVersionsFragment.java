@@ -16,6 +16,8 @@
 package es.tformacion.basicadapter.data.ui;
 
 
+import com.software.shell.fab.ActionButton;
+
 import android.app.ListFragment;
 import android.os.Bundle;
 import android.util.SparseBooleanArray;
@@ -153,6 +155,12 @@ public class AndroidVersionsFragment extends ListFragment {
         mListView = (ListView) rootView.findViewById(android.R.id.list);
         mListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
         mListView.setMultiChoiceModeListener(myMCML);
+
+        ActionButton actionButton = (ActionButton) rootView.findViewById(R.id.action_button2);
+        actionButton.setButtonColor(getResources().getColor(R.color.fab_material_cyan_500));
+        actionButton.setButtonColorPressed(getResources().getColor(R.color.fab_material_cyan_900));
+        actionButton.setImageResource(R.drawable.fab_plus_icon);
+        actionButton.setShowAnimation(ActionButton.Animations.FADE_IN);
 
         return rootView;
     }
