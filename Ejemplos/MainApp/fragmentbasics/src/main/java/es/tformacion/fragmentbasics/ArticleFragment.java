@@ -39,6 +39,7 @@ import android.widget.TextView;
 public class ArticleFragment extends Fragment {
     final static String ARG_POSITION = "position";
     int mCurrentPosition = -1;
+    private View mContainer;
 
     /**
      * Además de este método del ciclo de vida, se deberá implementar 
@@ -58,8 +59,8 @@ public class ArticleFragment extends Fragment {
         if (savedInstanceState != null) {
             mCurrentPosition = savedInstanceState.getInt(ARG_POSITION);
         }
-
-        return inflater.inflate(R.layout.article_view, container, false);
+        mContainer = inflater.inflate(R.layout.article_view, container, false);
+        return mContainer;
     }
 
     @Override
@@ -80,7 +81,7 @@ public class ArticleFragment extends Fragment {
     }
 
     public void updateArticleView(int position) {
-        TextView article = (TextView) getActivity().findViewById(R.id.article);
+        TextView article = (TextView) mContainer;
         article.setText(Ipsum.Articles[position]);
         mCurrentPosition = position;
     }
